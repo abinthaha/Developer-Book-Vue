@@ -1,8 +1,17 @@
 <template>
-    <nav>
-        <ul>
-            <router-link tag='li' active-class='active' to="/login" exact>Login</router-link>
-            <router-link tag='li' active-class='active' to="/sign-up">Sign Up</router-link>
-        </ul>
-    </nav>
+    <header>
+        <div>
+            Developer Book
+        </div>
+        <nav>
+            <ul>
+                <router-link tag='li' active-class='active' to="/home" exact>Home</router-link>
+                <router-link tag='li' active-class='active' to="/about">About</router-link>
+            </ul>
+        </nav>
+    </header>
 </template>
+
+<style lang="scss" scoped>
+    @import './index.scss'
+</style>
