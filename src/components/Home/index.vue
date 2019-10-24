@@ -1,6 +1,6 @@
 <template>
   <section id="home-wrapper">
-    <app-header :currentUser="currentUser"></app-header>
+    <app-header></app-header>
     <div class="content-wrapper">
       <router-view></router-view>
     </div>
@@ -18,7 +18,7 @@ export default {
   },
   data: function() {
     return {
-      reqestEmail: localStorage.getItem('user_email'),
+      reqestEmail: localStorage.getItem("user_email"),
       currentUser: {}
     };
   },
@@ -30,7 +30,13 @@ export default {
             this.currentUser = doc.data();
           }
         });
+        this.$store.dispatch("USER_DATA", this.currentUser);
       });
+    }
+  },
+  computed: {
+    getUserDetails: function() {
+      this.$store.getters.getUserDetails;
     }
   },
   mounted: function() {

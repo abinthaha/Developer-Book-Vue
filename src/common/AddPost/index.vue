@@ -34,7 +34,7 @@ import { postsRef } from "../../firebase";
 
 export default {
   name: "add-post",
-  data: function(params) {
+  data: function() {
     return {
       currentActive: "text",
       postText: ""
@@ -48,7 +48,7 @@ export default {
       this.postText = ev.target.value;
     },
     clearFields: function() {
-        this.postText = '';
+      this.postText = "";
     },
     sendPost: function() {
       const data = {
@@ -58,20 +58,26 @@ export default {
             : this.currentActive === "image"
             ? 2
             : 3,
-        post_heading: localStorage.getItem('user_email') + " Added a new post",
+        post_heading: this.getUserDetails.first_name + ' ' + this.getUserDetails.last_name + " Added a new post",
         post_content: this.postText
       };
-      postsRef.add({
+      postsRef
+        .add({
           ...data
         })
-        .then(data => {
-            this.clearFields();
-            this.$emit('messageFromChild', true)
+        .then(() => {
+          this.clearFields();
+          this.$emit("messageFromChild", true);
         });
     }
   },
   mounted: function() {
     this.currentActive = "text";
+  },
+  computed: {
+    getUserDetails: function() {
+      return this.$store.getters.getUserDetails;
+    }
   }
 };
 </script>

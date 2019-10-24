@@ -32,7 +32,9 @@ export default {
     },
     getAllPosts: function() {
       this.postsData = [];
-      postsRef.get().then(data => {
+      postsRef
+        .get()
+        .then(data => {
         data.forEach(doc => {
           this.postsData.push(doc.data());
         });
