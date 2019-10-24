@@ -1,0 +1,63 @@
+.main-header {
+    display: flex;
+    padding: 20px 10px;
+    box-shadow: 0 1px 8px 1px #ddd;
+    align-items: center;
+}
+
+.main-header div {
+    flex: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+ul li {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+ul li.active {
+    color: red;
+}
+
+.user-name {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    cursor: pointer;
+
+    &.red {
+        background-color: #e91e63;
+    }
+
+    &.violet {
+        background-color: #9c27b0;
+    }
+
+    &.green {
+        background-color: #009688;
+    }
+
+    &.blue {
+        background-color: #008fe2;
+    }
+
+    &.orange {
+        background-color: #ff5722;
+    }
+
+    &.brown {
+        background-color: #795548;
+    }
+}

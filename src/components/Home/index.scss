@@ -1,0 +1,26 @@
+.content-wrapper {
+    margin-top: 40px;
+}
+
+.post-wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin: 30px 0;
+
+    .each-post {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .post-heading {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
